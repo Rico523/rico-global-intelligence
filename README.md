@@ -2,7 +2,7 @@
 
 免费的个人全球新闻情报中心：Python 标准库采集 RSS/Atom，原生 HTML/CSS/JavaScript 与 Canvas 展示，GitHub Actions 定时采集，GitHub Pages 静态托管。没有 AI 分析、API Key、云数据库、付费地图、外部字体或运行时第三方包。
 
-**公开源码仓库已创建：https://github.com/Rico523/rico-global-intelligence 。GitHub Pages 已发布，费用门禁已核实；每天两次自动更新正在进行上线验收。网站：https://rico523.github.io/rico-global-intelligence/ 。**
+**公开源码仓库已创建：https://github.com/Rico523/rico-global-intelligence 。GitHub Pages 已发布，费用门禁已核实；每天两次自动更新已启用。网站：https://rico523.github.io/rico-global-intelligence/ 。**
 
 ## 本地运行
 
@@ -46,7 +46,7 @@ tests/                   离线单元和集成测试
 
 ## 采集来源
 
-第一版是 **13 个 RSS 订阅，来自 6 家发布机构**，不是 13 家独立媒体：
+第一版是 **12 个 RSS 订阅，来自 5 家发布机构**，不是 12 家独立媒体：
 
 | 机构 | 订阅范围 |
 |---|---|
@@ -54,14 +54,13 @@ tests/                   离线单元和集成测试
 | The Guardian | World、Business、Technology、Energy、Asia Pacific（5 个） |
 | Al Jazeera | 全站新闻 |
 | DW | World |
-| NASA | 官方公开资讯 |
 | Euronews | News |
 
-实际 URL 位于 `config/sources.json`。UN News 和 Nature 在候选实测中分别出现响应无法解析和没有近期有效条目，未列入正式配置。CNA 在云端实测中被 robots.txt 禁止，已替换为 Guardian Asia Pacific；不会绕过该限制。来源状态基于本次抓取结果，不保证永久可用。
+实际 URL 位于 `config/sources.json`。UN News 和 Nature 在候选实测中分别出现响应无法解析和没有近期有效条目，未列入正式配置。CNA 在云端实测中被 robots.txt 禁止，已替换为 Guardian Asia Pacific；NASA 在后续云端运行中返回 429 限流，已从启用列表移除。不会绕过这些限制。来源状态基于本次抓取结果，不保证永久可用。
 
 仅保存标题与链接等元数据，不下载全文、图片或视频，不绕过登录、付费墙或访问限制。采集前检查 robots.txt；禁止访问、403、异常 robots 响应或超长等待要求时跳过来源。RSS 内容的版权仍归发布者，公开可访问不等于无条件转载许可。个人非商业使用，公开发布前按 `SOURCE_POLICY.md` 核对来源规则；不自动申请收费许可。
 
-新增来源只需配置唯一 id、name、HTTPS url、默认 category。配置可容纳最多 120 个来源；本阶段只启用 13 个。扩展到 100 个以上需要重新验证网络预算和站点规则，程序不会自动提高频率、时间或费用预算。
+新增来源只需配置唯一 id、name、HTTPS url、默认 category。配置可容纳最多 120 个来源；本阶段只启用 12 个。扩展到 100 个以上需要重新验证网络预算和站点规则，程序不会自动提高频率、时间或费用预算。
 
 ## 免费额度与安全保护
 
@@ -94,7 +93,7 @@ GitHub 官方规则确认公开仓库的标准托管 Runner 运行时间免费�
 2. 检查费用保护、账户共享存储以及各来源非商业 RSS 使用条件。保持大型 Runner 和付费功能关闭。
 3. 在新仓库 Settings → Pages 中选择 GitHub Actions。确认 Environment `github-pages` 允许默认分支部署；如有人工审核规则，需要相应批准。
 4. 在 Settings → Secrets and variables → Actions → Variables 创建 `ZERO_COST_CONFIRMED`，值为 `true`。这是已完成账户检查的人工确认，代码本身不能读取或保证账户账单设置。
-5. Actions 中手动运行 **Collect and deploy Rico**。确认 13 个来源状态、部署成功和费用为 0；网站地址由部署步骤输出，通常为 `https://<用户名>.github.io/rico-global-intelligence/`。
+5. Actions 中手动运行 **Collect and deploy Rico**。确认 12 个来源状态、部署成功和费用为 0；网站地址由部署步骤输出，通常为 `https://<用户名>.github.io/rico-global-intelligence/`。
 6. 默认分支已启用每天两次定时；如需暂停，只注释 `schedule` 与 `cron` 两行或禁用工作流。不要提高频率或放开费用门禁。
 
 没有自定义域名依赖。`restore.py` 使用默认 github.io 地址；若以后使用自定义域名，需同步调整恢复路径并重新测试。未来如官方政策变化，先暂停该工作流，再研究替代方案，不能自动升级或付费。

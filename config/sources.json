@@ -66,12 +66,6 @@
     "category": "asia"
   },
   {
-    "id": "nasa",
-    "name": "NASA",
-    "url": "https://www.nasa.gov/feed/",
-    "category": "technology"
-  },
-  {
     "id": "euronews",
     "name": "Euronews",
     "url": "https://www.euronews.com/rss?level=theme&name=news",
