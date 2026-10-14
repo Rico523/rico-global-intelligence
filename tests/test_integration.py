@@ -49,11 +49,11 @@ class IntegrationTests(unittest.TestCase):
     def test_workflow_safety(self):
         workflow=(c.ROOT/'.github/workflows/pages.yml').read_text()
         self.assertIn('ZERO_COST_CONFIRMED',workflow);self.assertIn('cancel-in-progress: false',workflow)
-        self.assertNotIn('\n  schedule:',workflow);self.assertNotIn('git push',workflow)
+        self.assertIn('\n  schedule:',workflow);self.assertIn("cron: '17 0,12 * * *'",workflow);self.assertNotIn('git push',workflow)
         import re
         actions=re.findall(r'uses: ([^\n]+)',workflow)
         self.assertTrue(all(re.match(r'actions/[\w-]+@[0-9a-f]{40}',a) for a in actions))
-        self.assertEqual(re.findall(r'runs-on: (\S+)',workflow),['ubuntu-latest','ubuntu-latest'])
+        self.assertEqual(re.findall(r'runs-on: (\S+)',workflow),['ubuntu-24.04','ubuntu-24.04'])
         self.assertEqual(sum(map(int,re.findall(r'timeout-minutes: (\d+)',workflow))),5)
 
 class BoundaryTests(unittest.TestCase):

@@ -60,9 +60,9 @@
     "category": "world"
   },
   {
-    "id": "cna",
-    "name": "CNA Asia",
-    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511",
+    "id": "guardian-asia",
+    "name": "The Guardian Asia Pacific",
+    "url": "https://www.theguardian.com/world/asia-pacific/rss",
     "category": "asia"
   },
   {

@@ -52,3 +52,7 @@ GitHub 官方说明公开仓库标准 Runner 运行时间免费，GitHub Free �
 ## 下一阶段
 
 先确认新公开仓库、检查零费用设置并手动部署一次；成功后经确认启用每天两次定时。观察来源故障和分类/位置漏标，改善有限规则；不增加 AI，不扩大到 100 源。上线后补一次实体 iPhone Safari 测试。若官方免费政策或内容使用条件不能满足，暂停相关云端操作，不自动付费升级。
+
+## 云端上线进展（2026-10-15，日本时间）
+
+已核实 GitHub Free 和现有 Actions 0 美元付费预算、付費使用阻止。未修改账户全局预算或 NNA 项目。首次云端采集与 Pages 发布成功，工作流总用时 42 秒，网站 https://rico523.github.io/rico-global-intelligence/ 已可访问并展示 600 条真实新闻。CNA 在云端被 robots.txt 禁止，已按规则替换为 Guardian Asia Pacific。当前更新包含每天两次 schedule、官方 Node 24 Actions 完整 SHA 与固定免费 Ubuntu 24.04 Runner；本地 21 项测试和 actionlint 通过，下一次真实发布会验收这些更新。历史验收段落为此前本地阶段记录。

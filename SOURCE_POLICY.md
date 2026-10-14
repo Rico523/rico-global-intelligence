@@ -6,11 +6,11 @@
 - The Guardian：[RSS 使用说明](https://www.theguardian.com/help/feeds)、[公开许可条件](https://www.theguardian.com/info/2022/nov/01/open-licence-terms)。本项目限制为个人非商业用途，并为每条标题提供来源与原文链接。
 - Al Jazeera：[官网](https://www.aljazeera.com/)、[条款](https://www.aljazeera.com/terms-and-conditions)。公开 RSS 为读取入口，不自动赋予其他用途的许可。
 - DW：[官网](https://www.dw.com/)。使用其公开 RSS，不绕过访问限制；公开发布前复核其版权和当前使用条件。
-- CNA：[条款](https://www.channelnewsasia.com/terms-of-use)。仅公开 RSS 元数据；不抓取正文或媒体。公开聚合的具体权利仍需复核。
+- CNA：因云端 robots.txt 禁止访问而已从正式配置移除，未绕过限制。
 - NASA：[媒体使用指引](https://www.nasa.gov/nasa-brand-center/images-and-media/)。本项目仅使用公开资讯标题和原文链接，不使用徽章、人物图片、第三方媒体或暗示 NASA 背书。
 - Euronews：[官网](https://www.euronews.com/)。仅公开 RSS 标题与原文导航；公开发布前复核当前条款。
 
-若发布者不允许所需公开使用，应移除该订阅并替换免费允许的公开来源；不购买许可或绕过技术限制。robots.txt 是访问规则检查，不是内容版权授权。当前尚未公开部署，因此条款复核可在上线确认时完成。
+若发布者不允许所需公开使用，应移除该订阅并替换免费允许的公开来源；不购买许可或绕过技术限制。robots.txt 是访问规则检查，不是内容版权授权。网站已作为个人非商业标题阅读器发布；若来源政策变化导致不适用，将移除该来源，不购买许可。
 
 ## 海岸线
 
