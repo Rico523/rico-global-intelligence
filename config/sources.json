@@ -1,0 +1,80 @@
+[
+  {
+    "id": "bbc-world",
+    "name": "BBC World",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world"
+  },
+  {
+    "id": "bbc-business",
+    "name": "BBC Business",
+    "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "economy"
+  },
+  {
+    "id": "bbc-tech",
+    "name": "BBC Technology",
+    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology"
+  },
+  {
+    "id": "bbc-asia",
+    "name": "BBC Asia",
+    "url": "https://feeds.bbci.co.uk/news/world/asia/rss.xml",
+    "category": "asia"
+  },
+  {
+    "id": "guardian-world",
+    "name": "The Guardian World",
+    "url": "https://www.theguardian.com/world/rss",
+    "category": "world"
+  },
+  {
+    "id": "guardian-business",
+    "name": "The Guardian Business",
+    "url": "https://www.theguardian.com/business/rss",
+    "category": "economy"
+  },
+  {
+    "id": "guardian-tech",
+    "name": "The Guardian Technology",
+    "url": "https://www.theguardian.com/technology/rss",
+    "category": "technology"
+  },
+  {
+    "id": "guardian-energy",
+    "name": "The Guardian Energy",
+    "url": "https://www.theguardian.com/business/energy-industry/rss",
+    "category": "energy"
+  },
+  {
+    "id": "aljazeera",
+    "name": "Al Jazeera",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "category": "world"
+  },
+  {
+    "id": "dw",
+    "name": "DW World",
+    "url": "https://rss.dw.com/rdf/rss-en-world",
+    "category": "world"
+  },
+  {
+    "id": "cna",
+    "name": "CNA Asia",
+    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511",
+    "category": "asia"
+  },
+  {
+    "id": "nasa",
+    "name": "NASA",
+    "url": "https://www.nasa.gov/feed/",
+    "category": "technology"
+  },
+  {
+    "id": "euronews",
+    "name": "Euronews",
+    "url": "https://www.euronews.com/rss?level=theme&name=news",
+    "category": "world"
+  }
+]
