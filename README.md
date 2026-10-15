@@ -2,7 +2,7 @@
 
 免费的个人全球新闻情报中心：Python 标准库采集 RSS/Atom，原生 HTML/CSS/JavaScript 与 Canvas 展示，GitHub Actions 定时采集，GitHub Pages 静态托管。没有 AI 分析、API Key、云数据库、付费地图、外部字体或运行时第三方包。
 
-**公开源码仓库已创建：https://github.com/Rico523/rico-global-intelligence 。GitHub Pages 已发布，费用门禁已核实；每天两次自动更新已启用。网站：https://rico523.github.io/rico-global-intelligence/ 。**
+**公开源码仓库已创建：https://github.com/Rico523/rico-global-intelligence 。GitHub Pages 已发布，费用门禁已核实；每天两次自动更新已启用，且真实 schedule 运行已验证成功。网站：https://rico523.github.io/rico-global-intelligence/ 。**
 
 ## 本地运行
 
@@ -100,6 +100,6 @@ GitHub 官方规则确认公开仓库的标准托管 Runner 运行时间免费�
 
 ## 验证范围与限制
 
-测试覆盖 RSS/Atom、时区、异常日期、恶意 URL、实体 XML、去重、分类/位置、故障隔离、历史上限、数据大小、全失败保留、并发锁、维护提交和工作流保护。工作流经 YAML 解析和 actionlint 校验；首次真实 GitHub-hosted 运行与 Pages 发布已经成功；上线验收结果见 ACCEPTANCE.md。
+测试覆盖 RSS/Atom、时区、异常日期、恶意 URL、实体 XML、去重、分类/位置、故障隔离、历史上限、数据大小、全失败保留、并发锁、维护提交和工作流保护。工作流经 YAML 解析和 actionlint 校验；真实 GitHub-hosted 手动及 schedule 运行与 Pages 发布均已成功；最新 600 条、12/12 来源可用，结果见 ACCEPTANCE.md。
 
 网页已在浏览器验证桌面及 iPhone 宽度布局、搜索、组合筛选、地球拖动与标记点击；不是实体 iPhone Safari 测试。规则分类不是语义理解，国家识别以保守为原则，会漏标。下一阶段优先根据使用反馈修正规则和改善来源稳定性，不加入 AI 或扩大到 100 源。
