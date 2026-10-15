@@ -2,4 +2,4 @@
 
 .article .source-link{font-size:10px;margin:0;display:inline;color:var(--muted);line-height:inherit}
 
-.filters{grid-template-columns:repeat(3,minmax(0,1fr))}.filters .search{grid-column:1/-1}#nna-markets{columns:2;padding-left:20px}#nna-markets a{color:var(--cyan)}#coverage{font-size:12px}.article>a{overflow-wrap:anywhere}@media(max-width:600px){.filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.filters{grid-template-columns:repeat(3,minmax(0,1fr))}.filters .search{grid-column:1/-1}#coverage{font-size:12px}.article>a{overflow-wrap:anywhere}@media(max-width:600px){.filters{grid-template-columns:repeat(2,minmax(0,1fr))}}

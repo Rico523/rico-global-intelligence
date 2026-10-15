@@ -30,6 +30,6 @@
 - 日本：朝日新聞[官方 RSS 目录](https://www.asahi.com/information/service/rss.html)、毎日新聞[RSS](https://mainichi.jp/rss/)、nippon.com[官方目录](https://www.nippon.com/ja/rss_list/)，以及 Impress、JETRO、日本銀行、財務省官网直接提供的 RSS。仅标题导航，保留原文语言、来源和链接；RSS 内的说明、摘要、文章及图片不保留。
 - 其他新增频道来自对应媒体自己域名的公开 RSS，或其官网明确提供的分发域名。连通成功仅证明技术可用；不宣称获得商业转载许可，不转售、不投放广告、不存全文。使用条件变化时停用，不购买许可。
 - ITmedia：其[RSS 条件](https://corp.itmedia.co.jp/media/rss_condition/)对删改、仅摘录展示及应用集成有限制，本次不启用，不能因有 RSS 就推定适合公开聚合。
-- NNA：核对[官网著作权说明](https://www.nna.jp/corp_contents/copyright)。现有账号/私有项目使用授权没有覆盖本公开站点。只记录从官网实际导航发现的 11 个国家/地区入口，不复制新闻标题、会员摘要、正文、私有 JSON、登录代码、Cookie、Secrets 或摘录。入口不是有效新闻 Feed，不纳入成功数量。将来若获得明确允许本网站公开标题的许可，再独立审阅接入；不能通过配置开关自动恢复会员抓取。
+- NNA：按用户要求排除，不提供任何入口或新闻，不使用私有数据或会员采集逻辑。原 NNA 项目保持不变。
 
 候选来源出现 401/403、robots 禁止、验证码、格式错误、过期或时间不明时保留失败说明，不能改用登录会话、第三方代理或私有 API 绕过。本次 PR 没有变更原 NNA 项目或其正式运行时间。

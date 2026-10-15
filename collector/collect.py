@@ -401,7 +401,7 @@ def main():
     if any(s.get('language', 'en') not in ('en', 'zh', 'ja') or
            not safe_url(s['url']) or urllib.parse.urlsplit(s['url']).scheme != 'https' or
            urllib.parse.urlsplit(s['url']).hostname in ('www.nna.jp','nna.jp') for s in sources):
-        raise ValueError('Only supported public RSS languages/HTTPS feeds; NNA publication disabled pending permission')
+        raise ValueError('Only supported public RSS languages/HTTPS feeds; NNA is excluded from this project')
     target = ROOT / 'site/data/news.json'
     previous = {'items': [], 'last_success_at': None}
     if target.exists():

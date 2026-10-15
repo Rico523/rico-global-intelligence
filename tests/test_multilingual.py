@@ -104,10 +104,10 @@ class MultilingualTests(unittest.TestCase):
         for id in ['bbc-world','bbc-business','bbc-tech','bbc-asia','guardian-world','guardian-business','guardian-tech','guardian-energy','guardian-asia','aljazeera','dw','euronews']:
             self.assertTrue(any(s['id']==id and s['language']=='en' for s in sources),id)
 
-    def test_nna_portal_contains_eleven_verified_markets_only(self):
-        markets=json.loads((c.ROOT/'site/assets/nna-markets.json').read_text())
-        self.assertEqual(len(markets),11)
-        self.assertTrue(all(set(m)=={'label','url'} and m['url'].startswith('https://www.nna.jp/countries/') for m in markets))
+    def test_nna_is_absent_from_public_site(self):
+        self.assertFalse((c.ROOT/'site/assets/nna-markets.json').exists())
+        for name in ['index.html','app.js','style.css']:
+            self.assertNotIn('nna', (c.ROOT/'site'/name).read_text().lower())
 
     def test_pr_checks_cannot_deploy_or_write(self):
         workflow=(c.ROOT/'.github/workflows/source-check.yml').read_text()

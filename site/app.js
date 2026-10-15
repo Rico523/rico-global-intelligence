@@ -40,5 +40,3 @@ $('left').onclick=()=>{yaw-=20;draw();};$('right').onclick=()=>{yaw+=20;draw();}
  for(const country of [...new Set(items.flatMap(n=>[...n.countries,...n.regions]))].sort()){const option=el('option',country);option.value=country;$('country').append(option);}
  for(const s of data.sources){const li=el('li',`${s.ok?'●':'○'} ${s.name} · ${s.ok?s.count+' 条':s.error}`,s.ok?'ok':'bad');$('sources').append(li);}render();
  }catch(error){$('health').textContent='数据读取失败';$('news').append(el('p','请通过本地 HTTP 服务访问，或检查数据文件。'+error.message,'empty'));}})();
-
-fetch('assets/nna-markets.json').then(r=>{if(!r.ok)throw new Error('NNA directory unavailable');return r.json();}).then(markets=>{for(const m of markets){const li=el('li'),a=el('a',m.label);a.href=safeLink(m.url)||'#';a.target='_blank';a.rel='noopener noreferrer';li.append(a);$('nna-markets').append(li);}}).catch(()=>{$('nna-markets').append(el('li','NNA 官网入口读取失败'));});
