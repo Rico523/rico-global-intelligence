@@ -1,0 +1,46 @@
+[
+  {
+    "label": "中国",
+    "url": "https://www.nna.jp/countries/china"
+  },
+  {
+    "label": "香港",
+    "url": "https://www.nna.jp/countries/hongkong"
+  },
+  {
+    "label": "泰国 / タイ",
+    "url": "https://www.nna.jp/countries/thailand"
+  },
+  {
+    "label": "越南 / ベトナム",
+    "url": "https://www.nna.jp/countries/vietnam"
+  },
+  {
+    "label": "马来西亚 / マレーシア",
+    "url": "https://www.nna.jp/countries/malaysia"
+  },
+  {
+    "label": "印尼 / インドネシア",
+    "url": "https://www.nna.jp/countries/indonesia"
+  },
+  {
+    "label": "新加坡 / シンガポール",
+    "url": "https://www.nna.jp/countries/singapore"
+  },
+  {
+    "label": "菲律宾 / フィリピン",
+    "url": "https://www.nna.jp/countries/philippines"
+  },
+  {
+    "label": "缅甸 / ミャンマー",
+    "url": "https://www.nna.jp/countries/myanmar"
+  },
+  {
+    "label": "柬埔寨 / カンボジア",
+    "url": "https://www.nna.jp/countries/cambodia"
+  },
+  {
+    "label": "老挝 / ラオス",
+    "url": "https://www.nna.jp/countries/laos"
+  }
+]

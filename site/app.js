@@ -5,15 +5,15 @@ let items=[], filtered=[], shown=60, data;
 const el=(tag,text,className)=>{const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;return n;};
 function safeLink(url){try{const u=new URL(url);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
 function sourceLink(n){const a=el('a',n.source.startsWith('BBC ')?n.source.replace('BBC ','BBC News · '):n.source,'source-link');a.href=safeLink(n.url)||'#';a.target='_blank';a.rel='noopener noreferrer';return a;}
-function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category').value,country=$('country').value;
- filtered=items.filter(n=>(!cat||n.category===cat)&&(!country||(country==='unknown'?!n.countries.length&&!n.regions.length:[...n.countries,...n.regions].includes(country)))&&(!q||[n.title,n.source,...n.countries,...n.regions].join(' ').toLowerCase().includes(q)));
+function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category').value,country=$('country').value,language=$('language').value,media=$('media').value;
+ filtered=items.filter(n=>(!language||n.language===language)&&(!media||n.media===media)&&(!cat||n.category===cat)&&(!country||(country==='unknown'?!n.countries.length&&!n.regions.length:[...n.countries,...n.regions].includes(country)))&&(!q||[n.title,n.source,...n.countries,...n.regions].join(' ').toLowerCase().includes(q)));
  $('count').textContent=`${filtered.length} 条`; $('news').replaceChildren();
- for(const n of filtered.slice(0,shown)){const article=el('article','','article'),meta=el('div','','meta');meta.append(el('span',categories[n.category]||n.category,'tag'),sourceLink(n),el('time',new Date(n.published_at).toLocaleString('zh-CN')));article.append(meta);const a=el('a',n.title);a.href=safeLink(n.url)||'#';a.target='_blank';a.rel='noopener noreferrer';article.append(a,el('div',[...n.countries,...n.regions].join(' · ')||'位置未确定','places'));$('news').append(article);}
+ for(const n of filtered.slice(0,shown)){const article=el('article','','article'),meta=el('div','','meta');meta.append(el('span',categories[n.category]||n.category,'tag'),sourceLink(n),el('time',new Date(n.published_at).toLocaleString('zh-CN')));meta.append(el('span',({zh:'中文',ja:'日本語',en:'English'})[n.language]||n.language));article.lang=n.language||'en';article.append(meta);const a=el('a',n.title);a.href=safeLink(n.url)||'#';a.target='_blank';a.rel='noopener noreferrer';article.append(a,el('div',[...n.countries,...n.regions].join(' · ')||'位置未确定','places'));$('news').append(article);}
  if(!filtered.length)$('news').append(el('p','没有符合条件的新闻。','empty'));
  $('more').hidden=filtered.length<=shown;draw();
 }
-for(const id of ['search','category','country'])$(id).addEventListener('input',()=>{shown=60;render();});
-$('clear').onclick=()=>{for(const id of ['search','category','country'])$(id).value='';shown=60;render();};
+for(const id of ['search','category','country','language','media'])$(id).addEventListener('input',()=>{shown=60;render();});
+$('clear').onclick=()=>{for(const id of ['search','category','country','language','media'])$(id).value='';shown=60;render();};
 $('more').onclick=()=>{shown+=60;render();};
 const canvas=$('globe'),ctx=canvas.getContext('2d');let yaw=110,pitch=12,zoom=1,markers=[];
 // Bundled Natural Earth 1:110m coastlines, public domain. No map service.
@@ -29,11 +29,16 @@ canvas.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-dra
 canvas.addEventListener('pointerup',e=>{if(drag&&!drag.moved){const r=canvas.getBoundingClientRect(),hit=markers.find(p=>Math.hypot(p.x-(e.clientX-r.left),p.y-(e.clientY-r.top))<16);if(hit){$('country').value=hit.label;shown=60;render();}}drag=null;});canvas.addEventListener('pointercancel',()=>{drag=null;});
 canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();yaw+=e.key==='ArrowLeft'?-10:e.key==='ArrowRight'?10:0;pitch=Math.max(-70,Math.min(70,pitch+(e.key==='ArrowUp'?10:e.key==='ArrowDown'?-10:0)));draw();});
 $('left').onclick=()=>{yaw-=20;draw();};$('right').onclick=()=>{yaw+=20;draw();};$('zoomOut').onclick=()=>{zoom=Math.max(.65,zoom-.1);draw();};$('zoomIn').onclick=()=>{zoom=Math.min(1.15,zoom+.1);draw();};$('reset').onclick=()=>{yaw=110;pitch=12;zoom=1;draw();};window.addEventListener('resize',draw);draw();
-(async()=>{try{const response=await fetch('data/news.json',{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);data=await response.json();items=data.items;
+(async()=>{try{const response=await fetch('data/news.json',{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);data=await response.json();items=data.items.map(n=>({...n,language:n.language||'en',media:n.media||n.source}));
  const success=data.sources.filter(s=>s.ok).length;const age=data.last_success_at?Date.now()-Date.parse(data.last_success_at):Infinity;
  $('health').textContent=`${age>86400000?'数据已过期 · ':''}${data.status==='ok'?'运行正常':data.status==='partial'?'部分来源失败':'采集失败'} · ${success}/${data.sources.length} 来源可用`;
  $('updated').textContent=`最近尝试 ${new Date(data.updated_at).toLocaleString('zh-CN')} · 最近成功 ${data.last_success_at?new Date(data.last_success_at).toLocaleString('zh-CN'):'尚无'}`;
+ const sourceMedia=new Set(data.sources.map(s=>s.media||s.name));
+ $('coverage').textContent=`${sourceMedia.size} 个媒体 / ${data.sources.length} 个 Feed · 中文 ${items.filter(n=>n.language==='zh').length} · 日本語 ${items.filter(n=>n.language==='ja').length} · English ${items.filter(n=>n.language==='en').length}`;
+ for(const media of [...new Set(items.map(n=>n.media))].sort()){const option=el('option',media);option.value=media;$('media').append(option);}
  for(const [key,label] of Object.entries(categories)){const stat=el('div','','stat');stat.append(el('span',label),el('strong',items.filter(n=>n.category===key).length));$('stats').append(stat);const option=el('option',label);option.value=key;$('category').append(option);}
  for(const country of [...new Set(items.flatMap(n=>[...n.countries,...n.regions]))].sort()){const option=el('option',country);option.value=country;$('country').append(option);}
  for(const s of data.sources){const li=el('li',`${s.ok?'●':'○'} ${s.name} · ${s.ok?s.count+' 条':s.error}`,s.ok?'ok':'bad');$('sources').append(li);}render();
  }catch(error){$('health').textContent='数据读取失败';$('news').append(el('p','请通过本地 HTTP 服务访问，或检查数据文件。'+error.message,'empty'));}})();
+
+fetch('assets/nna-markets.json').then(r=>{if(!r.ok)throw new Error('NNA directory unavailable');return r.json();}).then(markets=>{for(const m of markets){const li=el('li'),a=el('a',m.label);a.href=safeLink(m.url)||'#';a.target='_blank';a.rel='noopener noreferrer';li.append(a);$('nna-markets').append(li);}}).catch(()=>{$('nna-markets').append(el('li','NNA 官网入口读取失败'));});

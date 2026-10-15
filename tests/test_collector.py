@@ -60,7 +60,7 @@ class CollectorTests(unittest.TestCase):
         self.assertFalse(status['ok']);self.assertEqual(request.call_count,1)
     def test_config(self):
         sources=json.loads((c.ROOT/'config/sources.json').read_text())
-        self.assertTrue(10<=len(sources)<=15)
+        self.assertTrue(80<=len(sources)<=120)
         self.assertEqual(len(sources),len({s['id'] for s in sources}))
         self.assertTrue(all(s['url'].startswith('https://') for s in sources))
 

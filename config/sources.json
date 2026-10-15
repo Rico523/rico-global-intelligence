@@ -3,72 +3,712 @@
     "id": "bbc-world",
     "name": "BBC World",
     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "category": "world"
+    "category": "world",
+    "language": "en",
+    "media": "BBC"
   },
   {
     "id": "bbc-business",
     "name": "BBC Business",
     "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
-    "category": "economy"
+    "category": "economy",
+    "language": "en",
+    "media": "BBC"
   },
   {
     "id": "bbc-tech",
     "name": "BBC Technology",
     "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
-    "category": "technology"
+    "category": "technology",
+    "language": "en",
+    "media": "BBC"
   },
   {
     "id": "bbc-asia",
     "name": "BBC Asia",
     "url": "https://feeds.bbci.co.uk/news/world/asia/rss.xml",
-    "category": "asia"
+    "category": "asia",
+    "language": "en",
+    "media": "BBC"
   },
   {
     "id": "guardian-world",
     "name": "The Guardian World",
     "url": "https://www.theguardian.com/world/rss",
-    "category": "world"
+    "category": "world",
+    "language": "en",
+    "media": "The Guardian"
   },
   {
     "id": "guardian-business",
     "name": "The Guardian Business",
     "url": "https://www.theguardian.com/business/rss",
-    "category": "economy"
+    "category": "economy",
+    "language": "en",
+    "media": "The Guardian"
   },
   {
     "id": "guardian-tech",
     "name": "The Guardian Technology",
     "url": "https://www.theguardian.com/technology/rss",
-    "category": "technology"
+    "category": "technology",
+    "language": "en",
+    "media": "The Guardian"
   },
   {
     "id": "guardian-energy",
     "name": "The Guardian Energy",
     "url": "https://www.theguardian.com/business/energy-industry/rss",
-    "category": "energy"
+    "category": "energy",
+    "language": "en",
+    "media": "The Guardian"
   },
   {
     "id": "aljazeera",
     "name": "Al Jazeera",
     "url": "https://www.aljazeera.com/xml/rss/all.xml",
-    "category": "world"
+    "category": "world",
+    "language": "en",
+    "media": "Al Jazeera"
   },
   {
     "id": "dw",
     "name": "DW World",
     "url": "https://rss.dw.com/rdf/rss-en-world",
-    "category": "world"
+    "category": "world",
+    "language": "en",
+    "media": "DW"
   },
   {
     "id": "guardian-asia",
     "name": "The Guardian Asia Pacific",
     "url": "https://www.theguardian.com/world/asia-pacific/rss",
-    "category": "asia"
+    "category": "asia",
+    "language": "en",
+    "media": "The Guardian"
   },
   {
     "id": "euronews",
     "name": "Euronews",
     "url": "https://www.euronews.com/rss?level=theme&name=news",
+    "category": "world",
+    "language": "en",
+    "media": "Euronews"
+  },
+  {
+    "id": "mainichi-mainichi-flash",
+    "name": "毎日新聞 · 速報",
+    "media": "毎日新聞",
+    "language": "ja",
+    "url": "https://mainichi.jp/rss/etc/mainichi-flash.rss",
     "category": "world"
+  },
+  {
+    "id": "nippon-ja",
+    "name": "nippon.com · 新着",
+    "media": "nippon.com",
+    "language": "ja",
+    "url": "https://www.nippon.com/ja/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "toyokeizai",
+    "name": "東洋経済 · 最新",
+    "media": "東洋経済",
+    "language": "ja",
+    "url": "https://toyokeizai.net/list/feed/rss",
+    "category": "economy"
+  },
+  {
+    "id": "cna-0",
+    "name": "中央通訊社 · 政治",
+    "media": "中央通訊社",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/politics",
+    "category": "politics"
+  },
+  {
+    "id": "cna-1",
+    "name": "中央通訊社 · 國際",
+    "media": "中央通訊社",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/intworld",
+    "category": "world"
+  },
+  {
+    "id": "cna-2",
+    "name": "中央通訊社 · 兩岸",
+    "media": "中央通訊社",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/mainland",
+    "category": "asia"
+  },
+  {
+    "id": "cna-3",
+    "name": "中央通訊社 · 財經",
+    "media": "中央通訊社",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/finance",
+    "category": "economy"
+  },
+  {
+    "id": "cna-4",
+    "name": "中央通訊社 · 科技",
+    "media": "中央通訊社",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/technology",
+    "category": "technology"
+  },
+  {
+    "id": "cna-5",
+    "name": "中央通訊社 · 生活",
+    "media": "中央通訊社",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/lifehealth",
+    "category": "world"
+  },
+  {
+    "id": "ltn-world",
+    "name": "自由時報 · 國際",
+    "media": "自由時報",
+    "language": "zh",
+    "url": "https://news.ltn.com.tw/rss/world.xml",
+    "category": "world"
+  },
+  {
+    "id": "ltn-politics",
+    "name": "自由時報 · 政治",
+    "media": "自由時報",
+    "language": "zh",
+    "url": "https://news.ltn.com.tw/rss/politics.xml",
+    "category": "politics"
+  },
+  {
+    "id": "ltn-business",
+    "name": "自由時報 · 財經",
+    "media": "自由時報",
+    "language": "zh",
+    "url": "https://news.ltn.com.tw/rss/business.xml",
+    "category": "economy"
+  },
+  {
+    "id": "ltn-life",
+    "name": "自由時報 · 生活",
+    "media": "自由時報",
+    "language": "zh",
+    "url": "https://news.ltn.com.tw/rss/life.xml",
+    "category": "world"
+  },
+  {
+    "id": "dw-zh",
+    "name": "DW · 中文",
+    "media": "DW",
+    "language": "zh",
+    "url": "https://rss.dw.com/rdf/rss-chi-all",
+    "category": "world"
+  },
+  {
+    "id": "bbc-zh",
+    "name": "BBC · 中文",
+    "media": "BBC",
+    "language": "zh",
+    "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+    "category": "world"
+  },
+  {
+    "id": "bbc-ja",
+    "name": "BBC · 日本語",
+    "media": "BBC",
+    "language": "ja",
+    "url": "https://feeds.bbci.co.uk/japanese/rss.xml",
+    "category": "world"
+  },
+  {
+    "id": "rfi-zh",
+    "name": "RFI · 中文",
+    "media": "RFI",
+    "language": "zh",
+    "url": "https://www.rfi.fr/cn/rss",
+    "category": "world"
+  },
+  {
+    "id": "rfi-tw",
+    "name": "法廣 · 繁體",
+    "media": "RFI",
+    "language": "zh",
+    "url": "https://www.rfi.fr/tw/rss",
+    "category": "world"
+  },
+  {
+    "id": "technews",
+    "name": "科技新報 · 最新",
+    "media": "科技新報",
+    "language": "zh",
+    "url": "https://technews.tw/feed/",
+    "category": "technology"
+  },
+  {
+    "id": "technews-finance",
+    "name": "科技新報 · 財經",
+    "media": "科技新報",
+    "language": "zh",
+    "url": "https://technews.tw/category/finance/feed/",
+    "category": "economy"
+  },
+  {
+    "id": "technews-ai",
+    "name": "科技新報 · 人工智慧",
+    "media": "科技新報",
+    "language": "zh",
+    "url": "https://technews.tw/category/ai/feed/",
+    "category": "technology"
+  },
+  {
+    "id": "bangkok-business",
+    "name": "Bangkok Post · Business",
+    "media": "Bangkok Post",
+    "language": "en",
+    "url": "https://www.bangkokpost.com/rss/data/business.xml",
+    "category": "economy"
+  },
+  {
+    "id": "bangkok-world",
+    "name": "Bangkok Post · World",
+    "media": "Bangkok Post",
+    "language": "en",
+    "url": "https://www.bangkokpost.com/rss/data/world.xml",
+    "category": "world"
+  },
+  {
+    "id": "vnexpress",
+    "name": "VnExpress · Latest",
+    "media": "VnExpress",
+    "language": "en",
+    "url": "https://e.vnexpress.net/rss/news.rss",
+    "category": "asia"
+  },
+  {
+    "id": "vnexpress-business",
+    "name": "VnExpress · Business",
+    "media": "VnExpress",
+    "language": "en",
+    "url": "https://e.vnexpress.net/rss/business.rss",
+    "category": "economy"
+  },
+  {
+    "id": "vnexpress-world",
+    "name": "VnExpress · World",
+    "media": "VnExpress",
+    "language": "en",
+    "url": "https://e.vnexpress.net/rss/world.rss",
+    "category": "world"
+  },
+  {
+    "id": "antara",
+    "name": "ANTARA · Latest",
+    "media": "ANTARA",
+    "language": "en",
+    "url": "https://en.antaranews.com/rss/news.xml",
+    "category": "asia"
+  },
+  {
+    "id": "antara-business",
+    "name": "ANTARA · Business",
+    "media": "ANTARA",
+    "language": "en",
+    "url": "https://en.antaranews.com/rss/business-investment.xml",
+    "category": "economy"
+  },
+  {
+    "id": "khmertimes",
+    "name": "Khmer Times · Latest",
+    "media": "Khmer Times",
+    "language": "en",
+    "url": "https://www.khmertimeskh.com/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "khmertimes-business",
+    "name": "Khmer Times · Business",
+    "media": "Khmer Times",
+    "language": "en",
+    "url": "https://www.khmertimeskh.com/category/business/feed/",
+    "category": "economy"
+  },
+  {
+    "id": "laotian",
+    "name": "The Laotian Times · Latest",
+    "media": "The Laotian Times",
+    "language": "en",
+    "url": "https://laotiantimes.com/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "laotian-business",
+    "name": "The Laotian Times · Business",
+    "media": "The Laotian Times",
+    "language": "en",
+    "url": "https://laotiantimes.com/category/business/feed/",
+    "category": "economy"
+  },
+  {
+    "id": "diplomat",
+    "name": "The Diplomat · Asia Pacific",
+    "media": "The Diplomat",
+    "language": "en",
+    "url": "https://thediplomat.com/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "asean",
+    "name": "ASEAN · News",
+    "media": "ASEAN",
+    "language": "en",
+    "url": "https://asean.org/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "nippon-en",
+    "name": "Nippon · Latest",
+    "media": "nippon.com",
+    "language": "en",
+    "url": "https://www.nippon.com/en/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "asahi-news",
+    "name": "朝日新聞 · 主要",
+    "media": "朝日新聞",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/newsheadlines.rdf",
+    "category": "world"
+  },
+  {
+    "id": "asahi-international",
+    "name": "朝日新聞 · 国際",
+    "media": "朝日新聞",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/international.rdf",
+    "category": "world"
+  },
+  {
+    "id": "asahi-politics",
+    "name": "朝日新聞 · 政治",
+    "media": "朝日新聞",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/politics.rdf",
+    "category": "politics"
+  },
+  {
+    "id": "asahi-business",
+    "name": "朝日新聞 · 経済",
+    "media": "朝日新聞",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/business.rdf",
+    "category": "economy"
+  },
+  {
+    "id": "asahi-science",
+    "name": "朝日新聞 · 科学",
+    "media": "朝日新聞",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/science.rdf",
+    "category": "technology"
+  },
+  {
+    "id": "impress-pc",
+    "name": "Impress · PC Watch",
+    "media": "Impress",
+    "language": "ja",
+    "url": "https://pc.watch.impress.co.jp/data/rss/1.0/pcw/feed.rdf",
+    "category": "technology"
+  },
+  {
+    "id": "impress-kaden",
+    "name": "Impress · 家電 Watch",
+    "media": "Impress",
+    "language": "ja",
+    "url": "https://kaden.watch.impress.co.jp/data/rss/1.0/kdw/feed.rdf",
+    "category": "technology"
+  },
+  {
+    "id": "impress-car",
+    "name": "Impress · Car Watch",
+    "media": "Impress",
+    "language": "ja",
+    "url": "https://car.watch.impress.co.jp/data/rss/1.0/car/feed.rdf",
+    "category": "trade"
+  },
+  {
+    "id": "impress-ktai",
+    "name": "Impress · ケータイ Watch",
+    "media": "Impress",
+    "language": "ja",
+    "url": "https://k-tai.watch.impress.co.jp/data/rss/1.0/ktw/feed.rdf",
+    "category": "technology"
+  },
+  {
+    "id": "rthk-zh-local",
+    "name": "RTHK · 香港",
+    "media": "RTHK",
+    "language": "zh",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_clocal.xml",
+    "category": "asia"
+  },
+  {
+    "id": "rthk-zh-greaterchina",
+    "name": "RTHK · 大中華",
+    "media": "RTHK",
+    "language": "zh",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_greaterchina.xml",
+    "category": "asia"
+  },
+  {
+    "id": "rthk-zh-international",
+    "name": "RTHK · 國際",
+    "media": "RTHK",
+    "language": "zh",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cinternational.xml",
+    "category": "world"
+  },
+  {
+    "id": "rthk-zh-finance",
+    "name": "RTHK · 財經",
+    "media": "RTHK",
+    "language": "zh",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cfinance.xml",
+    "category": "economy"
+  },
+  {
+    "id": "rthk-en-local",
+    "name": "RTHK · Hong Kong",
+    "media": "RTHK",
+    "language": "en",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_elocal.xml",
+    "category": "asia"
+  },
+  {
+    "id": "rthk-en-international",
+    "name": "RTHK · World",
+    "media": "RTHK",
+    "language": "en",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_einternational.xml",
+    "category": "world"
+  },
+  {
+    "id": "rthk-en-finance",
+    "name": "RTHK · Business",
+    "media": "RTHK",
+    "language": "en",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_efinance.xml",
+    "category": "economy"
+  },
+  {
+    "id": "nippon-news-ja",
+    "name": "nippon.com · News",
+    "media": "nippon.com",
+    "language": "ja",
+    "url": "https://www.nippon.com/ja/rss-others/news.xml",
+    "category": "world"
+  },
+  {
+    "id": "nippon-zh-news",
+    "name": "nippon.com · 中文",
+    "media": "nippon.com",
+    "language": "zh",
+    "url": "https://www.nippon.com/cn/rss-others/news.xml",
+    "category": "world"
+  },
+  {
+    "id": "nippon-en-news",
+    "name": "nippon.com · English",
+    "media": "nippon.com",
+    "language": "en",
+    "url": "https://www.nippon.com/en/rss-others/news.xml",
+    "category": "world"
+  },
+  {
+    "id": "mof-ja",
+    "name": "財務省 · 新着",
+    "media": "財務省",
+    "language": "ja",
+    "url": "https://www.mof.go.jp/news.rss",
+    "category": "economy"
+  },
+  {
+    "id": "boj-ja",
+    "name": "日本銀行 · 新着",
+    "media": "日本銀行",
+    "language": "ja",
+    "url": "https://www.boj.or.jp/rss/whatsnew.xml",
+    "category": "economy"
+  },
+  {
+    "id": "boj-en",
+    "name": "Bank of Japan · Releases",
+    "media": "日本銀行",
+    "language": "en",
+    "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
+    "category": "economy"
+  },
+  {
+    "id": "hkpress-en",
+    "name": "Hong Kong Government · Releases",
+    "media": "香港政府",
+    "language": "en",
+    "url": "https://www.info.gov.hk/gia/rss/general_en.xml",
+    "category": "politics"
+  },
+  {
+    "id": "scmp-asia",
+    "name": "SCMP · Asia",
+    "media": "SCMP",
+    "language": "en",
+    "url": "https://www.scmp.com/rss/3/feed",
+    "category": "asia"
+  },
+  {
+    "id": "scmp-china",
+    "name": "SCMP · China",
+    "media": "SCMP",
+    "language": "en",
+    "url": "https://www.scmp.com/rss/4/feed",
+    "category": "asia"
+  },
+  {
+    "id": "scmp-economy",
+    "name": "SCMP · Business",
+    "media": "SCMP",
+    "language": "en",
+    "url": "https://www.scmp.com/rss/92/feed",
+    "category": "economy"
+  },
+  {
+    "id": "scmp-business",
+    "name": "SCMP · Hong Kong",
+    "media": "SCMP",
+    "language": "en",
+    "url": "https://www.scmp.com/rss/2/feed",
+    "category": "asia"
+  },
+  {
+    "id": "channelnewsasia",
+    "name": "CNA · Asia",
+    "media": "CNA Singapore",
+    "language": "en",
+    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511",
+    "category": "asia"
+  },
+  {
+    "id": "malaymail",
+    "name": "Malay Mail · Malaysia",
+    "media": "Malay Mail",
+    "language": "en",
+    "url": "https://www.malaymail.com/feed/rss/malaysia",
+    "category": "asia"
+  },
+  {
+    "id": "malaymail-money",
+    "name": "Malay Mail · Money",
+    "media": "Malay Mail",
+    "language": "en",
+    "url": "https://www.malaymail.com/feed/rss/money",
+    "category": "economy"
+  },
+  {
+    "id": "asahi-national",
+    "media": "朝日新聞",
+    "name": "朝日新聞 · 社会",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/national.rdf",
+    "category": "world"
+  },
+  {
+    "id": "asahi-eco",
+    "media": "朝日新聞",
+    "name": "朝日新聞 · 環境",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/eco.rdf",
+    "category": "energy"
+  },
+  {
+    "id": "asahi-job",
+    "media": "朝日新聞",
+    "name": "朝日新聞 · 雇用",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/job.rdf",
+    "category": "economy"
+  },
+  {
+    "id": "asahi-edu",
+    "media": "朝日新聞",
+    "name": "朝日新聞 · 教育",
+    "language": "ja",
+    "url": "https://www.asahi.com/rss/asahi/edu.rdf",
+    "category": "world"
+  },
+  {
+    "id": "nippon-zh",
+    "media": "nippon.com",
+    "name": "nippon.com · 中文新着",
+    "language": "zh",
+    "url": "https://www.nippon.com/cn/feed/",
+    "category": "asia"
+  },
+  {
+    "id": "cna-6",
+    "media": "中央通訊社",
+    "name": "中央通訊社 · 社會",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/social",
+    "category": "world"
+  },
+  {
+    "id": "cna-7",
+    "media": "中央通訊社",
+    "name": "中央通訊社 · 地方",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/local",
+    "category": "asia"
+  },
+  {
+    "id": "cna-8",
+    "media": "中央通訊社",
+    "name": "中央通訊社 · 文化",
+    "language": "zh",
+    "url": "https://feeds.feedburner.com/rsscna/culture",
+    "category": "world"
+  },
+  {
+    "id": "ltn-breaking",
+    "media": "自由時報",
+    "name": "自由時報 · 即時",
+    "language": "zh",
+    "url": "https://news.ltn.com.tw/rss/all.xml",
+    "category": "world"
+  },
+  {
+    "id": "rthk-en-china",
+    "media": "RTHK",
+    "name": "RTHK · Greater China",
+    "language": "en",
+    "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_egreaterchina.xml",
+    "category": "asia"
+  },
+  {
+    "id": "globalvoices-ja",
+    "media": "Global Voices",
+    "name": "Global Voices · 日本語",
+    "language": "ja",
+    "url": "https://jp.globalvoices.org/feed/",
+    "category": "world"
+  },
+  {
+    "id": "jetro-rss",
+    "media": "JETRO",
+    "name": "JETRO · ビジネス短信",
+    "language": "ja",
+    "url": "https://www.jetro.go.jp/rss/biznews.xml",
+    "category": "trade"
   }
 ]
