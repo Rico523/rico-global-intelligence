@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-15T22:29:36.976214Z",
+  "elapsed_seconds": 45.36,
+  "configured_feeds": 86,
+  "configured_media": 28,
+  "successful_feeds": 86,
+  "successful_media": 28,
+  "feed_languages": {
+    "en": 37,
+    "ja": 22,
+    "zh": 27
+  },
+  "fetched_items": 2556,
+  "fetched_languages": {
+    "en": 1247,
+    "ja": 574,
+    "zh": 735
+  },
+  "retained_items": 600,
+  "retained_languages": {
+    "zh": 304,
+    "ja": 122,
+    "en": 174
+  },
+  "environment": "GitHub-hosted ubuntu-24.04 / CPython 3.13",
+  "commit": "58aec77ce31b069bc0c9bd9156d038478da4c781",
+  "workflow_run": "https://github.com/Rico523/rico-global-intelligence/actions/runs/38817374865",
+  "failures": []
+}

@@ -6,7 +6,19 @@
 
 ## 真实验证
 
-最终逐源报告在本 PR 完成云端检查后补入；本地三轮候选测试从失败地址中修正官方目录链接，86 个启用 Feed 都至少通过一次 HTTP / RSS-Atom / 编码 / 有效时间及近期条目检查。每次检查的瞬时成功数可能变化；不能把之前成功冒充当前成功。
+2026-10-16（日本时间）最终验证：
+
+| 环境 | 有效媒体/机构 | 有效 Feed | 中文/日语/英文 Feed | 采集条目 | 保留条目 | 耗时 |
+|---|---:|---:|---|---:|---:|---|
+| GitHub Ubuntu | 28/28 | 86/86 | 27 / 22 / 37 | 2,556 | 600 | 45.36 秒 |
+| 本地 Mac | 28/28 | 86/86 | 27 / 22 / 37 | 2,576 | 600 | 150 秒硬时限内完成 |
+
+云端保留新闻：中文 304、日语 122、英文 174；本地保留新闻：中文 302、日语 119、英文 179。采集条目为去重前的 Feed 条目，600 为去重、14 天保留及数量上限后的新闻，并不代表所有频道的全部历史。两处请求时点不同，因此条目数略有差别。最终启用配置的本地及云端实测失败来源均为 0。
+
+- [最终逐源本地报告](audits/local-2026-10-16.json)：86 个来源的 HTTP、格式、编码、可解析条目数、失效/过期计数、发布日期范围、来源数量和耗时；没有文章正文。
+- [最终云端汇总](audits/cloud-2026-10-16.json)及[成功运行日志](https://github.com/Rico523/rico-global-intelligence/actions/runs/38817374865)：34 项测试与真实来源检查通过，权限只有 contents:read，没有部署步骤。
+- [89 候选本地报告](audits/candidate-local-89-2026-10-16.json)保留筛选过程证据；不等于最终启用配置。首轮云端 86/89，CNA Singapore 被 robots 禁止，Khmer Times 两个频道 robots 403；3 个新增 Feed 随后移除，不重试绕过。
+- 新闻 JSON 本地约 305 KB；含两份历史的 site 约 1.01 MB，低于 4 MB 发布上限。新增来源没有提高新闻保留量。
 
 34 个离线测试通过，包括旧编码 GB18030/Big5/Shift-JIS、UTF-16 DTD 拒绝、时区、跨国地理、中文印度/印尼碰撞、单站串行与 robots 缓存、请求预算、gzip 解压上限、禁止正文公开、NNA 目录和只读 PR 工作流。Node 语法检查和 actionlint 通过。
 
@@ -20,6 +32,7 @@ NNA 官网未明确授予本公开站点转载标题的许可，且原有私有�
 
 ## 失败候选与不启用原因
 
+- CNA Singapore：云端 robots 禁止；Khmer Times 两个频道：云端 robots 403，均从最终启用配置移除。
 - NHK 旧域名返回过期 RSS；新域名实测 401，不尝试认证。
 - 联合新闻网 RSS 返回过期条目；Global Voices 中文没有 14 天内有效条目。
 - 财新和 RTHK 旧目录地址发生 HTTP 降级。财新未启用；RTHK 使用官网旧地址所指向、并重新验证成功的 HTTPS 域名。
@@ -37,3 +50,38 @@ NNA 官网未明确授予本公开站点转载标题的许可，且原有私有�
 2026-10-16 核对 [GitHub Actions 官方计费](https://docs.github.com/en/billing/concepts/product-billing/github-actions)：公开标准 Runner 免费，大型 Runner 不免费，artifact 存储仍有账户共享额度。本 PR 使用既有标准 `ubuntu-24.04`；没有新增付费服务、API、AI、数据库或服务器。
 
 robots 解析遵循 [RFC 9309 2.3.1.5](https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1.5)，使用可解析的 REP 规则并忽略其他行。部分官方 RSS 分发域名的 robots 以 200 返回普通 HTML 落地页（没有 REP 指令），报告以 robots_format=html 如实标记；这不等于取得内容转载许可。验证码或访问挑战、403、网络错误继续跳过，不运行网页脚本或认证流程。
+
+## 最终来源构成
+
+| 媒体 / 机构 | Feed 数 | 语言 |
+|---|---:|---|
+| ANTARA | 2 | English |
+| ASEAN | 1 | English |
+| Al Jazeera | 1 | English |
+| BBC | 6 | English / 日本語 / 中文 |
+| Bangkok Post | 2 | English |
+| DW | 2 | English / 中文 |
+| Euronews | 1 | English |
+| Global Voices | 1 | 日本語 |
+| Impress | 4 | 日本語 |
+| JETRO | 1 | 日本語 |
+| Malay Mail | 2 | English |
+| RFI | 2 | 中文 |
+| RTHK | 8 | English / 中文 |
+| SCMP | 4 | English |
+| The Diplomat | 1 | English |
+| The Guardian | 5 | English |
+| The Laotian Times | 2 | English |
+| VnExpress | 3 | English |
+| nippon.com | 6 | English / 日本語 / 中文 |
+| 中央通訊社 | 9 | 中文 |
+| 日本銀行 | 2 | English / 日本語 |
+| 朝日新聞 | 9 | 日本語 |
+| 東洋経済 | 1 | 日本語 |
+| 毎日新聞 | 1 | 日本語 |
+| 科技新報 | 3 | 中文 |
+| 自由時報 | 5 | 中文 |
+| 財務省 | 1 | 日本語 |
+| 香港政府 | 1 | English |
+
+审批边界：PR #1 保持 open / unmerged；正式 pages.yml、main 和 NNA 原项目没有修改。批准合并后，现有下一次定时任务才会采集并部署扩源版，不在本次擅自触发正式发布。

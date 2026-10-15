@@ -2,6 +2,8 @@
 
 免费的个人全球新闻情报中心：Python 标准库采集 RSS/Atom，原生 HTML/CSS/JavaScript 与 Canvas 展示，GitHub Actions 定时采集，GitHub Pages 静态托管。没有 AI 分析、API Key、云数据库、付费地图、外部字体或运行时第三方包。
 
+本次扩源状态：**PR 待审，扩源版未部署；下述上线状态指已有第一版。**
+
 **公开源码仓库已创建：https://github.com/Rico523/rico-global-intelligence 。GitHub Pages 已发布，费用门禁已核实；每天两次自动更新已启用，且真实 schedule 运行已验证成功。网站：https://rico523.github.io/rico-global-intelligence/ 。**
 
 ## 本地运行
