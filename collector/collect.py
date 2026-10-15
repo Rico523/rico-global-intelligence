@@ -107,7 +107,8 @@ def matches(text, terms):
 
 def geography(title):
     countries = [name for name, (_, _, words) in PLACES.items()
-                 if matches(title.replace('印度尼西亚', '').replace('印度尼西亞', '') if name == 'India' else title, words)]
+                 if matches(title.replace('印度尼西亚', '').replace('印度尼西亞', '') if name == 'India'
+                            else title.replace('中国地方', '').replace('中國地方', '') if name == 'China' else title, words)]
     if re.search(r'(?<!\w)US(?!\w)', title) and 'United States' not in countries:
         countries.append('United States')
     regions = [name for name, words in REGIONS.items() if matches(title, words)]
@@ -255,9 +256,14 @@ class FetchSession:
                 raise TimeoutError('Run budget exhausted; source skipped')
             if origin not in self.rules:
                 try:
-                    raw = request(origin + '/robots.txt', 300000)
+                    raw = request(origin + '/robots.txt', 512000)
+                    if re.search(br'captcha|cf-chl-|challenge-platform|verify you are human|access denied', raw.lower()):
+                        raise ValueError('Robots response contains access challenge')
                     rules = urllib.robotparser.RobotFileParser()
+                    # RFC 9309 2.3.1.5: use parseable rules, ignore other lines.
+                    # Some official RSS hosts return a soft-404 HTML landing page here.
                     rules.parse(raw.decode('utf-8', 'strict').splitlines())
+                    rules.rico_format = 'html' if raw.lstrip().startswith(b'<') else 'text'
                     self.rules[origin] = rules
                 except urllib.error.HTTPError as error:
                     if error.code == 404:
@@ -271,6 +277,7 @@ class FetchSession:
             rules = self.rules[origin]
             if isinstance(rules, Exception):
                 raise ValueError(f'Robots check failed: {type(rules).__name__}: {str(rules)[:100]}')
+            metadata['robots_format'] = getattr(rules, 'rico_format', '404_missing')
             if not rules.can_fetch(USER_AGENT, url):
                 raise ValueError('Access disallowed by robots.txt')
             delay = max(.5, rules.crawl_delay(USER_AGENT) or 0)

@@ -2,7 +2,6 @@
 import argparse
 import concurrent.futures
 from collections import Counter
-import datetime as dt
 import json
 from pathlib import Path
 import signal

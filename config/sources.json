@@ -320,22 +320,6 @@
     "category": "economy"
   },
   {
-    "id": "khmertimes",
-    "name": "Khmer Times · Latest",
-    "media": "Khmer Times",
-    "language": "en",
-    "url": "https://www.khmertimeskh.com/feed/",
-    "category": "asia"
-  },
-  {
-    "id": "khmertimes-business",
-    "name": "Khmer Times · Business",
-    "media": "Khmer Times",
-    "language": "en",
-    "url": "https://www.khmertimeskh.com/category/business/feed/",
-    "category": "economy"
-  },
-  {
     "id": "laotian",
     "name": "The Laotian Times · Latest",
     "media": "The Laotian Times",
@@ -589,14 +573,6 @@
     "media": "SCMP",
     "language": "en",
     "url": "https://www.scmp.com/rss/2/feed",
-    "category": "asia"
-  },
-  {
-    "id": "channelnewsasia",
-    "name": "CNA · Asia",
-    "media": "CNA Singapore",
-    "language": "en",
-    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511",
     "category": "asia"
   },
   {

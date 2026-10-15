@@ -33,6 +33,7 @@ class MultilingualTests(unittest.TestCase):
     def test_cjk_rules_and_cross_border_ambiguity(self):
         self.assertEqual(c.geography('印度尼西亚银行新闻')[0],['Indonesia'])
         self.assertIsNone(c.geography('印度与印度尼西亚贸易谈判')[2])
+        self.assertEqual(c.geography('中国地方の大雨')[0],[])
         self.assertEqual(c.geography('中国と日本の貿易協定')[0],['Japan','China'])
         self.assertIsNone(c.geography('中国と日本の貿易協定')[2])
         self.assertEqual(c.geography('香港金融市场')[0],['Hong Kong'])
@@ -68,6 +69,11 @@ class MultilingualTests(unittest.TestCase):
         with patch.object(c,'request') as request:
             news,status=c.fetch(SOURCE,c.FetchSession(budget=0))
         request.assert_not_called();self.assertFalse(status['ok']);self.assertEqual(news,[])
+
+    def test_html_robots_challenge_is_not_permission(self):
+        with patch.object(c,'request',return_value=b'<html>Verify you are human</html>') as request:
+            _,status=c.fetch(SOURCE)
+        self.assertFalse(status['ok']);self.assertEqual(request.call_count,1)
 
     def test_gzip_response_and_decompression_limit(self):
         for content,limit,valid in [(b'User-agent: *\nAllow: /',300,True),(b'x'*10000,100,False)]:

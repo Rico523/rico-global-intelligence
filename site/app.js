@@ -4,7 +4,7 @@ const categories = {world:'全球',politics:'政治',economy:'经济金融',tech
 let items=[], filtered=[], shown=60, data;
 const el=(tag,text,className)=>{const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;return n;};
 function safeLink(url){try{const u=new URL(url);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
-function sourceLink(n){const a=el('a',n.source.startsWith('BBC ')?n.source.replace('BBC ','BBC News · '):n.source,'source-link');a.href=safeLink(n.url)||'#';a.target='_blank';a.rel='noopener noreferrer';return a;}
+function sourceLink(n){const a=el('a',n.source.startsWith('BBC · ')?n.source.replace('BBC · ','BBC News · '):n.source.startsWith('BBC ')?n.source.replace('BBC ','BBC News · '):n.source,'source-link');a.href=safeLink(n.url)||'#';a.target='_blank';a.rel='noopener noreferrer';return a;}
 function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category').value,country=$('country').value,language=$('language').value,media=$('media').value;
  filtered=items.filter(n=>(!language||n.language===language)&&(!media||n.media===media)&&(!cat||n.category===cat)&&(!country||(country==='unknown'?!n.countries.length&&!n.regions.length:[...n.countries,...n.regions].includes(country)))&&(!q||[n.title,n.source,...n.countries,...n.regions].join(' ').toLowerCase().includes(q)));
  $('count').textContent=`${filtered.length} 条`; $('news').replaceChildren();

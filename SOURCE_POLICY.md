@@ -6,7 +6,8 @@
 - The Guardian：[RSS 使用说明](https://www.theguardian.com/help/feeds)、[公开许可条件](https://www.theguardian.com/info/2022/nov/01/open-licence-terms)。本项目限制为个人非商业用途，并为每条标题提供来源与原文链接。
 - Al Jazeera：[官网](https://www.aljazeera.com/)、[条款](https://www.aljazeera.com/terms-and-conditions)。公开 RSS 为读取入口，不自动赋予其他用途的许可。
 - DW：[官网](https://www.dw.com/)。使用其公开 RSS，不绕过访问限制；公开发布前复核其版权和当前使用条件。
-- CNA Singapore：过去云端有过 robots 禁止记录；本次重新逐次检查，禁止或失败时直接跳过，不沿用旧许可判断。与台湾中央通訊社分开统计。
+- CNA Singapore：本次云端再测 robots 仍禁止，已从启用配置移除。与台湾中央通訊社不同，不影响中央通訊社 RSS。
+- Khmer Times：本地可访问，GitHub 运行器 robots 返回 403，两个 Feed 已从启用配置移除。
 - NASA：因第二次云端运行返回 429 限流而已从正式启用列表移除，不重试或绕过限制。
 - Euronews：[官网](https://www.euronews.com/)。仅公开 RSS 标题与原文导航；公开发布前复核当前条款。
 
